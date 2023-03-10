@@ -1,0 +1,237 @@
+@font-face {
+    font-family: Azonix;
+    src: url("../fonts/Azonix.otf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("../images/bg.jpg");
+    background-repeat: repeat-y;
+    background-size: cover;
+
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#game {
+    display: block;
+    background-color: #00000059;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.blocks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide_border {
+    border: 5px solid #fff;
+}
+
+.block {
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: .3rem;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: background-color .1s;
+}
+
+.block:hover {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.current_pos {
+    background: url("../images/Hull_02.png");
+    background-size: contain;
+    border: none;
+}
+
+.animate_rotation {
+    transition: transform .2s;
+}
+
+.rotate_east {
+    transform: rotate(90deg);
+}
+
+.rotate_south {
+    transform: rotate(180deg);
+}
+
+.rotate_west {
+    transform: rotate(270deg);
+}
+
+@keyframes fire_animation {
+    0%   {background-size: contain; background-image: url("../images/Explosion_A.png");}
+    12%  {background-size: contain; background-image: url("../images/Explosion_B.png");}
+    24%  {background-size: contain; background-image: url("../images/Explosion_C.png");}
+    36%  {background-size: contain; background-image: url("../images/Explosion_D.png");}
+    48%  {background-size: contain; background-image: url("../images/Explosion_E.png");}
+    60%  {background-size: contain; background-image: url("../images/Explosion_F.png");}
+    72%  {background-size: contain; background-image: url("../images/Explosion_G.png");}
+    84%  {background-size: contain; background-image: url("../images/Explosion_H.png");}
+}
+
+.fire {
+    display: block;
+    animation: fire_animation .7s;
+}
+
+.side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.controls {
+    position: relative;
+}
+
+.buttons > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: auto 10px;
+    color: #fff;
+    border: 2px solid #fff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    transition: box-shadow, transform, background-color .3s ease;
+}
+
+.buttons > a:hover {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 0 75px 20px #fff;
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.buttons {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dashboard, .controls {
+    display: block;
+    width: 450px;
+    height: 250px;
+    border-radius: 10px;
+    margin: 2rem;
+    background-color: #00000059;
+}
+.dashboard > h1, .controls > h1 {
+    text-align: center;
+    margin: 5px;
+    color: #fff;
+    font-family: Azonix, sans-serif;
+}
+
+.dashboard > table {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
+    color: #fff;
+}
+
+tr, td, table, th {
+    border: 1px solid #fff;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 10px;
+    font-family: monospace, sans-serif;
+}
+
+th {
+    font-family: monospace, sans-serif;
+    text-align: left;
+    width: 50%;
+    padding-left: 10px;
+}
+
+#compass {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-top: 5px solid #fff;
+    border-radius: 50%;
+    position: relative;
+}
+
+#compass > p {
+    position: absolute;
+    font-size: 26px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 1130px) {
+    .controls, .dashboard {
+        width: 600px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .controls, .dashboard, #game {
+        width: 90%;
+    }
+
+    .block {
+        width: 30px;
+        height: 30px;
+    }
+
+    #compass {
+        width: 40px;
+        height: 40px;
+    }
+
+    .buttons {
+        margin-top: 20px;
+    }
+
+    .buttons > a {
+        width: 70px;
+        height: 70px;
+        margin: 10px;
+    }
+
+    .blocks {
+        transform: scale(80%);
+    }
+}

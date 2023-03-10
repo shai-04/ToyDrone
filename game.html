@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang = "en-za">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+
+        <link rel = "icon" type = "image/x-icon" href = "assets/images/favicon.png">
+        <link rel = "stylesheet" href = "assets/css/all.min.css">
+        <link rel = "stylesheet" href = "assets/css/fontawesome.min.css">
+        <link rel="stylesheet" href="assets/css/game.css">
+
+        <title>Shaiyur Dooken // 10x10 Game</title>
+    </head>
+
+    <body>
+        <div class="side">
+            <div class="dashboard">
+                <h1>Dashboard</h1>
+                <table>
+                    <tr>
+                        <th>Status</th>
+                        <td id = "tank_status">Place the drone down</td>
+                    </tr>
+                    <tr>
+                        <th>Direction</th>
+                        <td><div id="compass"><p id = "compass_text"><i class="fa-solid fa-angles-up"></i></p></div></td>
+                    </tr>
+                    <tr>
+                        <th>Last reported position</th>
+                        <td id = "report_text">n/a</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="controls">
+                <h1>Controls</h1>
+
+                <div class="buttons">
+                    <a onclick = "document.dispatchEvent(new KeyboardEvent('keyup', {'code': 'ArrowLeft'}));"><i class="fa-solid fa-angles-left"></i></a>
+                    <a onclick = "document.dispatchEvent(new KeyboardEvent('keyup', {'code': 'ArrowRight'}));"><i class="fa-solid fa-angles-right"></i></a>
+                    <a onclick = "document.dispatchEvent(new KeyboardEvent('keyup', {'code': 'KeyZ'}));"><i class="fa-solid fa-gun"></i></a>
+                    <a onclick = "document.dispatchEvent(new KeyboardEvent('keyup', {'code': 'KeyX'}));"><i class="fa-solid fa-person-walking"></i></a>
+                    <a onclick = "document.dispatchEvent(new KeyboardEvent('keyup', {'code': 'KeyC'}));"><i class="fa-solid fa-note-sticky"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div id = "game"></div>
+
+        <script src = "assets/js/game.js"></script>
+    </body>
+</html>
