@@ -1,10 +1,10 @@
-#Toy Drone Assessment
-##Rules of Engagement
-###Interface
+# Toy Drone Assessment
+## Rules of Engagement
+### Interface
 The interface needs to look as good as possible and also work on both mobile and desktop devices. The
 logic part of the test should only take about a day to complete, so use the rest of the time to embellish
 the interface it as much as possible, really show us what you can do, show us your creative side!
-###Logic
+### Logic
 The assessment / game is a simulation of a toy drone moving on a square surface (you decide what the
 surface looks like), The dimensions of the surface are 10 units x 10 units. There are no other
 obstructions on the surface. The drone is free to roam around the surface, but must be prevented from
